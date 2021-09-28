@@ -1,0 +1,36 @@
+<h2>Data Binding</h2>
+<h3>String Interpolation</h3>
+<p>Me llamo {{nombre}}</p>
+<p>Hola {{nombre !== '' ? nombre : 'Mundo'}}</p>
+<p>{{getSaludo('Arya')}}</p> <!-- NUNCA hacerlo asi, hacerlo normalmente en el ngOnInit -->
+
+<h3>Property Binding</h3>
+<input type="text" [value]="nombre">
+<input type="text" [value]="nombre" [disabled]="true">
+<input type="text" [value]="nombre" [disabled]="deshabilitado">
+<p [style.color]="blue">El color de la letra es azul</p> <!-- Asi va a buscar la variable al ts -->
+<p [style.color]="'blue'">El color de la letra es azul</p> <!-- Asi le pasamos un string en vez de la propiedad del ts -->
+
+<h3>Event Binding</h3>
+<button type="button" (click)="muestraMensaje('Un mensaje cualquiera', $event)">Muestra mensaje</button> <!-- change, mouseover, etc -->
+<button type="button" (click)="canta()">Canta la intro</button>
+<button type="button" (click)="muestraMensaje('Un mensaje cualquiera ', $event)">Muestra mensaje</button> <!-- Para pasarle el evento que se esta haciendo en html. 
+    event para acceder al boton -->
+
+<h3>Two Way Data Binding</h3>
+<input type="text" [(ngModel)]="nombre">
+<button type="button" (click)="resetearNombre()">Resetear nombre</button>
+<input type="text" [(ngModel)]="persona.nombre">
+<input type="text" [(ngModel)]="persona.apellido">
+<p>{{persona.nombre}} {{persona.apellido}}</p>
+
+
+
+<h3>Nuestro 2Way Binding</h3>
+<input type="text" (keyup)="actualizarNombrePrueba($event)" [value]="nombrePrueba">
+<p>{{nombrePrueba}}</p>
+
+
+<!-- Sin ngModel Que reciba una propiedad que se 
+    obtenga del typescript y viceversa, con un parrafo abajo -->
+

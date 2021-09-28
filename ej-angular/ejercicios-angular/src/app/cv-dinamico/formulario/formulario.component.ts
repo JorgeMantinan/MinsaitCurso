@@ -13,6 +13,13 @@ export class FormularioComponent implements OnInit {
     emailCV: ''
   }
 
+  usuario = {
+    nombre: '',
+    apellidos: '',
+    email: ''
+  }
+  ocultarDatos: boolean = true;
+
   constructor() { }
 
   ngOnInit(): void {
@@ -22,6 +29,15 @@ export class FormularioComponent implements OnInit {
     this.persona.nombreCV = nombre;
     this.persona.apellidosCV = apellidos;
     this.persona.emailCV = email;
+  }
+
+  enviarDatos(nombre: string, apellidos: string, email: string): void {
+    this.usuario.nombre = nombre.trim();
+    this.usuario.apellidos = apellidos.trim();
+    this.usuario.email = email.trim();
+
+    const props: Array<string> = Object.values(this.usuario);
+    this.ocultarDatos = props.every((val: string) => val === '');
   }
 
 }

@@ -27,6 +27,7 @@ export class CmpDataBindingComponent implements OnInit {
   muestraMensaje(msg: string, event: any): void {
     alert(msg);
     console.log(event.target);
+    console.log(msg);
     const element: HTMLElement = event.target;
     element.innerText = 'Otra movida';
     //(event.target as HTMLButtonElement).innerText = 'Otra cosa';

@@ -1,0 +1,11 @@
+
+
+
+<p>Nombre: </p> <input type="text" #nombreCV >
+<p>Apellidos: </p> <input type="text" #apellidosCV >
+<p>Email: </p> <input type="text" #emailCV >
+
+<button type="button" (click)="actualizarCV(nombreCV.value, apellidosCV.value, emailCV.value)">Actualizar CV</button>
+
+<p>CV de {{persona.nombreCV}} {{persona.apellidosCV}}</p>
+<p>- Email: {{persona.emailCV}}</p>

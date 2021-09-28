@@ -26,11 +26,16 @@
 
 
 
-<h3>Nuestro 2Way Binding</h3>
+<h3>Nuestro 2Way Binding sin ngModel</h3>
 <input type="text" (keyup)="actualizarNombrePrueba($event)" [value]="nombrePrueba">
 <p>{{nombrePrueba}}</p>
 
+<h3>Variables de plantilla</h3>
+<input type="text" #input1 ><!-- Esta creando una referencia de la etiqueta -->
+<button type="button" (click)="muestraMensaje(input1.value, $event)">Mostrar texto input</button>
 
-<!-- Sin ngModel Que reciba una propiedad que se 
-    obtenga del typescript y viceversa, con un parrafo abajo -->
 
+<!-- 
+    Crear un formulario con las variables de plantilla en la que tendremos nombre apellidos y email.
+    boton para mostrar en p lo que vayamos escribiendo (Cv de nombre apellidos, email email)
+ -->

@@ -41,4 +41,14 @@ fs.readFile('texto1.txt')
 
     // ASYNC/AWAIT
 
-    
+    async function a() {
+        // await hace que espere ha que haya finalizado el primero
+        // solo funciona en una funcion async
+        const contenido1 = await fs.readFile('texto1.txt');
+        console.log(contenido1.toString());
+        const contenido2 = await fs.readFile('texto2.txt');
+        console.log(contenido2.toString());
+        const contenido3 = await fs.readFile('texto3.txt');
+        console.log(contenido3.toString());
+    }
+    a();

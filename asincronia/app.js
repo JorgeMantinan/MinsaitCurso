@@ -34,3 +34,11 @@ fs.readFile('texto1.txt')
         console.log(contenido.toString());
         return fs.readFile('texto3.txt');
     })
+    .then(contenido => {
+        console.log(contenido.toString());
+    })
+
+
+    // ASYNC/AWAIT
+
+    

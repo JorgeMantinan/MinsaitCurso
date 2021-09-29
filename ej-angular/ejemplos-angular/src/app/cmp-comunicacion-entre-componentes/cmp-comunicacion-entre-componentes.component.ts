@@ -16,4 +16,8 @@ export class CmpComunicacionEntreComponentesComponent implements OnInit {
   fnAlert() {
     alert('My alert');
   }
+
+  fnConsoleLog() {
+    console.log('My console log');
+  }
 }

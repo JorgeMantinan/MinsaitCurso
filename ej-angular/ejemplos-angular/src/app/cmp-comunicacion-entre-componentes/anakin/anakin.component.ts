@@ -17,5 +17,9 @@ export class AnakinComponent implements OnInit {
   cambiaNombreLeia(nuevoNombre: any):void {
     this.nombreLeia = nuevoNombre;
   }
+  cambiaNombreLuke(nuevoNombre: any):void {
+    console.log('cambiaNombreLuke ' + nuevoNombre);
+    this.nombreLuke = nuevoNombre;
+  }
 
 }

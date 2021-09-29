@@ -7,10 +7,16 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class LukeComponent implements OnInit {
 
-  @Input() nombre: string = ''
+  @Input() nombre: string = '';
+  @Input() handleChangeNombre: any;
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  handleChangeNombreLuke(txt: string): any {
+    console.log('handleChangeNombreLuke ' + txt);
+    return () => this.handleChangeNombre(txt);
   }
 
 }

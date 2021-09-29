@@ -16,6 +16,9 @@ import { LukeComponent } from './cmp-comunicacion-entre-componentes/luke/luke.co
 import { LeiaComponent } from './cmp-comunicacion-entre-componentes/leia/leia.component';
 import { MiBotonComponent } from './cmp-comunicacion-entre-componentes/mi-boton/mi-boton.component';
 import { CmpPipesComponent } from './cmp-pipes/cmp-pipes.component';
+import { ReversePipe } from './cmp-pipes/reverse.pipe';
+import { DoblePipe } from './cmp-pipes/doble.pipe';
+import { HideWordsPipe } from './cmp-pipes/hide-words.pipe';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,10 @@ import { CmpPipesComponent } from './cmp-pipes/cmp-pipes.component';
     LukeComponent,
     LeiaComponent,
     MiBotonComponent,
-    CmpPipesComponent
+    CmpPipesComponent,
+    ReversePipe,
+    DoblePipe,
+    HideWordsPipe
   ],
   imports: [
     BrowserModule,

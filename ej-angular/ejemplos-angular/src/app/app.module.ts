@@ -11,6 +11,9 @@ import { EventosComponent } from './cmp-data-binding/eventos/eventos.component';
 import { CmpComunicacionEntreComponentesComponent } from './cmp-comunicacion-entre-componentes/cmp-comunicacion-entre-componentes.component';
 import { SugusComponent } from './cmp-comunicacion-entre-componentes/sugus/sugus.component';
 import { ProductoComponent } from './cmp-comunicacion-entre-componentes/producto/producto.component';
+import { AnakinComponent } from './cmp-comunicacion-entre-componentes/anakin/anakin.component';
+import { LukeComponent } from './cmp-comunicacion-entre-componentes/luke/luke.component';
+import { LeiaComponent } from './cmp-comunicacion-entre-componentes/leia/leia.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { ProductoComponent } from './cmp-comunicacion-entre-componentes/producto
     EventosComponent,
     CmpComunicacionEntreComponentesComponent,
     SugusComponent,
-    ProductoComponent
+    ProductoComponent,
+    AnakinComponent,
+    LukeComponent,
+    LeiaComponent
   ],
   imports: [
     BrowserModule,

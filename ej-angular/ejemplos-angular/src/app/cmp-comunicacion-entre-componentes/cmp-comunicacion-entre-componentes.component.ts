@@ -12,4 +12,8 @@ export class CmpComunicacionEntreComponentesComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+  fnAlert() {
+    alert('My alert');
+  }
 }

@@ -20,5 +20,17 @@ fs.readFile('texto1.txt', (err, contenido) => {
     })
 })
 
+
 // PROMISES
 
+const fs = require('fs').promises;
+
+fs.readFile('texto1.txt')
+    .then(contenido => {
+        console.log(contenido.toString());
+        return fs.readFile('texto2.txt');
+    })
+    .then(contenido => {
+        console.log(contenido.toString());
+        return fs.readFile('texto3.txt');
+    })

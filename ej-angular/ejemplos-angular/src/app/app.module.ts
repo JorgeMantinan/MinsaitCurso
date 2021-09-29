@@ -15,6 +15,7 @@ import { AnakinComponent } from './cmp-comunicacion-entre-componentes/anakin/ana
 import { LukeComponent } from './cmp-comunicacion-entre-componentes/luke/luke.component';
 import { LeiaComponent } from './cmp-comunicacion-entre-componentes/leia/leia.component';
 import { MiBotonComponent } from './cmp-comunicacion-entre-componentes/mi-boton/mi-boton.component';
+import { CmpPipesComponent } from './cmp-pipes/cmp-pipes.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { MiBotonComponent } from './cmp-comunicacion-entre-componentes/mi-boton/
     AnakinComponent,
     LukeComponent,
     LeiaComponent,
-    MiBotonComponent
+    MiBotonComponent,
+    CmpPipesComponent
   ],
   imports: [
     BrowserModule,

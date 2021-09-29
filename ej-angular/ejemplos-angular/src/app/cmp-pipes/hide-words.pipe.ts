@@ -14,6 +14,7 @@ export class HideWordsPipe implements PipeTransform {
   //   return nuevoTexto;
   // }
 
+  //Profesor
   transform(value: string, palabras: string[]): string {
     palabras.forEach(palabra => {
       const regExp = new RegExp(palabra,'gi');

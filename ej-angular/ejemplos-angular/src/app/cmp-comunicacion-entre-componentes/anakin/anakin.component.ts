@@ -9,7 +9,9 @@ export class AnakinComponent implements OnInit {
 
   nombreLuke: string = 'Luke Skywalker'
   nombreLeia: string = 'Leia Morgana'
-  constructor() { }
+  constructor() { 
+    this.cambiaNombreLuke = this.cambiaNombreLuke.bind(this);
+  }
 
   ngOnInit(): void {
   }

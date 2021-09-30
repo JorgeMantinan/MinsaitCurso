@@ -20,6 +20,7 @@ import { ReversePipe } from './cmp-pipes/reverse.pipe';
 import { DoblePipe } from './cmp-pipes/doble.pipe';
 import { HideWordsPipe } from './cmp-pipes/hide-words.pipe';
 import { CmpDirectivasComponent } from './cmp-directivas/cmp-directivas.component';
+import { MarcarDirective } from './cmp-directivas/marcar.directive';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { CmpDirectivasComponent } from './cmp-directivas/cmp-directivas.componen
     ReversePipe,
     DoblePipe,
     HideWordsPipe,
-    CmpDirectivasComponent
+    CmpDirectivasComponent,
+    MarcarDirective
   ],
   imports: [
     BrowserModule,

@@ -52,3 +52,8 @@
     <p *ngSwitchCase="'red'">La letra roja</p>
     <p *ngSwitchDefault>La letra negra</p>
 </div>
+
+<p appMarcar>Estoy usando la directiva appMarcar</p>
+<p appMarcar color="yellow">Estoy usando la directiva appMarcar</p> <!-- Ahora reconoce appMarcar, no color -->
+<p appMarcar="yellow">Estoy usando la directiva appMarcar</p>
+<p [appMarcar]="colorLetra">Estoy usando la directiva appMarcar</p>

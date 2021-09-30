@@ -47,9 +47,13 @@
 
 <!-- Switch -->
 <div [ngSwitch]="colorLetra">
-    <p *ngSwitchCase="'orange'">La letra naranja</p>
+    <ng-container *ngFor="let color of colores">
+        <p *ngSwitchCase="color">La letra {{color}}</p>
+    </ng-container>
+    
+    <!-- <p *ngSwitchCase="'orange'">La letra naranja</p>
     <p *ngSwitchCase="'blue'">La letra azul</p>
-    <p *ngSwitchCase="'red'">La letra roja</p>
+    <p *ngSwitchCase="'red'">La letra roja</p> -->
     <p *ngSwitchDefault>La letra negra</p>
 </div>
 

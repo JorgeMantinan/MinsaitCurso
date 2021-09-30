@@ -18,6 +18,8 @@ export class CmpDirectivasComponent implements OnInit {
   { id: 4, tipo: 'tortuga' }
   ];
 
+  colores = ['orange','blue','red'];
+
   constructor() { }
 
   ngOnInit(): void {

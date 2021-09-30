@@ -19,6 +19,7 @@ import { CmpPipesComponent } from './cmp-pipes/cmp-pipes.component';
 import { ReversePipe } from './cmp-pipes/reverse.pipe';
 import { DoblePipe } from './cmp-pipes/doble.pipe';
 import { HideWordsPipe } from './cmp-pipes/hide-words.pipe';
+import { CmpDirectivasComponent } from './cmp-directivas/cmp-directivas.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { HideWordsPipe } from './cmp-pipes/hide-words.pipe';
     CmpPipesComponent,
     ReversePipe,
     DoblePipe,
-    HideWordsPipe
+    HideWordsPipe,
+    CmpDirectivasComponent
   ],
   imports: [
     BrowserModule,

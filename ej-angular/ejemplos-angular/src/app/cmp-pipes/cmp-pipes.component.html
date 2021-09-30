@@ -16,3 +16,10 @@
 <!-- <p>{{'hola cruel' | hideWords:'cucu':'cruel'}}</p> -->
 
 <p>{{'hola cruel' | hideWords:['cruel']}}</p>
+
+<!-- con el pipe asincrono recibe un objeto asincrono de ts(como le promise por ejemplo) -->
+<p>{{mensaje | async}}</p>
+
+<pre>{{personaje | json}}</pre>
+
+<pre>{{personaje2 | async | json}}</pre>

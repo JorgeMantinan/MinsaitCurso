@@ -1,0 +1,54 @@
+<h2>Directivas</h2>
+
+<h3>De Atributo</h3>
+<!-- <p [ngStyle]="{textDecoration: 'underline', color: 'orange'}">El texto subrayado y de color naranja</p> -->
+<p [ngStyle]="getStyles()">El texto subrayado y de color naranja</p>
+<p>El texto de color rojo con fondo amarillo</p>
+<input type="text" [(ngModel)]="colorLetra">
+<p [ngClass]="getClases()">El texto subrayado y de color naranja</p>
+<button type="button" (click)="toogleFondo()">Pinta el fondo</button>
+
+<h3>Estructurales</h3>
+
+<!-- <button type="button" *ngIf="darkMode" (click)="activaLightMode()">🌑</button> -->
+<!-- <button type="button" *ngIf="!darkMode" (click)="activaDarkMode()">🌞</button> -->
+
+<!-- <button type="button" *ngIf="darkMode; else lightModeBtn" (click)="activaLightMode()">🌑</button>
+<ng-template #lightModeBtn>
+    <button type="button" (click)="activaDarkMode()">🌞</button>
+</ng-template> -->
+
+
+<ng-container *ngIf="darkMode; then darkModeBtn else lightModeBtn"></ng-container>
+<ng-template #darkModeBtn>
+    <button type="button" (click)="activaLightMode()">🌑</button>
+</ng-template>
+<ng-template #lightModeBtn>
+    <button type="button" (click)="activaDarkMode()">🌞</button>
+</ng-template>
+
+<!-- <ul>
+    <li *ngFor="let animal of animales; let pos = index; let esUltimo = last; let esPrimero = first; trackBy: trackByAnimales">
+        <hr *ngIf="esPrimero">
+        <span>{{pos+1}} {{animal | titlecase}}
+            {{esUltimo ? 'Es el ultimo' : 'No es el ultimo'}}
+        </span>
+        <hr *ngIf="esUltimo">
+
+    </li>
+</ul> -->
+
+<ul>
+    <li *ngFor="let animal of animales2; let pos = index; trackBy: trackByAnimales2">
+        <span> {{animal.tipo | titlecase}}
+        </span>
+    </li>
+</ul>
+
+<!-- Switch -->
+<div [ngSwitch]="colorLetra">
+    <p *ngSwitchCase="'orange'">La letra naranja</p>
+    <p *ngSwitchCase="'blue'">La letra azul</p>
+    <p *ngSwitchCase="'red'">La letra roja</p>
+    <p *ngSwitchDefault>La letra negra</p>
+</div>

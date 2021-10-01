@@ -19,10 +19,18 @@ export class CmpDirectivasComponent implements OnInit {
   ];
 
   colores = ['orange','blue','red'];
+  filtraColor = '';
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  addColor(event: any) {
+    //this.colores.push(event.target.value);
+    //para evitar el pure:false del pipe
+    //clonamos la lista añadiendole el nuevo color
+    this.colores = [... this.colores, event.target.value];
   }
 
   toogleFondo() {

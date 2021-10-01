@@ -22,6 +22,7 @@ import { HideWordsPipe } from './cmp-pipes/hide-words.pipe';
 import { CmpDirectivasComponent } from './cmp-directivas/cmp-directivas.component';
 import { MarcarDirective } from './cmp-directivas/marcar.directive';
 import { PracticaDirectivaDirective } from './cmp-directivas/practica-directiva.directive';
+import { FiltroPipe } from './cmp-directivas/filtro.pipe';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { PracticaDirectivaDirective } from './cmp-directivas/practica-directiva.
     HideWordsPipe,
     CmpDirectivasComponent,
     MarcarDirective,
-    PracticaDirectivaDirective
+    PracticaDirectivaDirective,
+    FiltroPipe
   ],
   imports: [
     BrowserModule,

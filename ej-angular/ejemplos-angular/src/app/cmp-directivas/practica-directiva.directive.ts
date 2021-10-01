@@ -10,13 +10,13 @@ export class PracticaDirectivaDirective {
 
   @HostBinding('style.transform') posicionX = 'translateX(' + this.posicionPx +'px)';
 
-  @HostBinding('style.backgroundColor') color = this.colores[0];
+  @HostBinding('style.backgroundColor') color = this.colores[3];
   constructor() { }
 
   @HostListener('keyup') keyup() {
     this.posicionX = 'translateX(' + this.posicionPx+1 +'px)';
     this.posicionPx = this.posicionPx + 1;
-    this.color = this.colores[Math.floor(Math.random()*this.colores.length)];;
+    this.color = this.colores[Math.floor(Math.random()*this.colores.length)];
   }
 
 

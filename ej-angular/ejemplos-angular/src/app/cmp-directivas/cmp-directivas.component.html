@@ -10,6 +10,23 @@
 
 <h3>Estructurales</h3>
 
+
+<div>
+    <label for="nuevoColor">Añade un color: </label>
+    <input type="text" id="nuevoColor" (change)="addColor($event)">
+</div>
+<ul>
+    <li *ngFor="let color of colores">{{color}}</li>
+</ul>
+
+<div>
+    <label for="filtro">Filtrar por: </label>
+    <input type="text" id="filtro" [(ngModel)]="filtraColor">
+</div>
+<ul>
+    <li *ngFor="let color of colores | filtro:filtraColor">{{color}}</li>
+</ul>
+
 <!-- <button type="button" *ngIf="darkMode" (click)="activaLightMode()">🌑</button> -->
 <!-- <button type="button" *ngIf="!darkMode" (click)="activaDarkMode()">🌞</button> -->
 
@@ -50,7 +67,7 @@
     <ng-container *ngFor="let color of colores">
         <p *ngSwitchCase="color">La letra {{color}}</p>
     </ng-container>
-    
+
     <!-- <p *ngSwitchCase="'orange'">La letra naranja</p>
     <p *ngSwitchCase="'blue'">La letra azul</p>
     <p *ngSwitchCase="'red'">La letra roja</p> -->
@@ -64,4 +81,4 @@
 
 
 
-<input appPracticaDirectiva type="text"> <!-- Que se mueva y que vaya cambiando de color de forma aleatoria -->
+<input appPracticaDirectiva type="text">

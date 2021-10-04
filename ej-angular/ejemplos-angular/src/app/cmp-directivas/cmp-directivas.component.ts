@@ -18,12 +18,21 @@ export class CmpDirectivasComponent implements OnInit {
   { id: 4, tipo: 'tortuga' }
   ];
 
-  colores = ['orange','blue','red'];
+  animales3 = [{ id: 1, tipo: 'perro' },
+  { id: 2, tipo: 'gato' }
+  ];
+
+  colores = ['orange', 'blue', 'red'];
   filtraColor = '';
 
   constructor() { }
 
   ngOnInit(): void {
+    setTimeout(() => {
+      this.animales3 = [
+        { id: 1, tipo: 'canario' },
+        { id: 2, tipo: 'gato' }]
+    }, 10000);
   }
 
   addColor(event: any) {
@@ -64,6 +73,10 @@ export class CmpDirectivasComponent implements OnInit {
 
   trackByAnimales2(index: number, animal: any) {
     console.log(animal.id);
+    return animal.id;
+  }
+
+  trackById(index: number, animal: any): number {
     return animal.id;
   }
 

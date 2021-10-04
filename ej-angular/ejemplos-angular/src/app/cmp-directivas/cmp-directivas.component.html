@@ -1,5 +1,11 @@
 <h2>Directivas</h2>
 
+<ul>
+    <li *ngFor="let animal of animales3; trackBy: trackById">
+        {{animal.tipo}}
+    </li>
+</ul>
+
 <h3>De Atributo</h3>
 <!-- <p [ngStyle]="{textDecoration: 'underline', color: 'orange'}">El texto subrayado y de color naranja</p> -->
 <p [ngStyle]="getStyles()">El texto subrayado y de color naranja</p>

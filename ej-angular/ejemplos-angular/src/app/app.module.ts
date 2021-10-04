@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http'; 
 
 import { AppComponent } from './app.component';
 import { ComponenteAManoComponent } from './componente-a-mano/componente-a-mano.component';
@@ -30,6 +31,7 @@ import { LeiaComponent as SLeiaComponent } from './cmp-servicios/leia/leia.compo
 import { TareaComponent } from './cmp-servicios/tarea/tarea.component';
 import { CmpObservablesComponent } from './cmp-observables/cmp-observables.component';
 import { UnsubscribeComponent } from './cmp-observables/unsubscribe/unsubscribe.component';
+import { CmpHttpComponent } from './cmp-http/cmp-http.component';
 
 @NgModule({
   declarations: [
@@ -59,11 +61,13 @@ import { UnsubscribeComponent } from './cmp-observables/unsubscribe/unsubscribe.
     SLeiaComponent,
     TareaComponent,
     CmpObservablesComponent,
-    UnsubscribeComponent
+    UnsubscribeComponent,
+    CmpHttpComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

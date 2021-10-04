@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, Observer } from 'rxjs';
+import { fromEvent, interval, Observable, Observer, Subscription } from 'rxjs';
+import { filter, map, take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-cmp-observables',
@@ -8,31 +9,40 @@ import { Observable, Observer } from 'rxjs';
 })
 export class CmpObservablesComponent implements OnInit {
 
+  suscripciones: Array<Subscription> = [];
+  mostrarComponente: boolean = true;
+
   constructor() { }
 
   ngOnInit(): void {
-    this.crearObservable();
+    //this.crearObservable();
+    //this.observableConOperadores();
+    //this.observableDeEventos();
+  }
+
+  toggleComponente() {
+    this.mostrarComponente = !this.mostrarComponente;
   }
 
   crearObservable() {
     const miObservable = new Observable((observer: Observer<string>) => {
       observer.next('Te acabas de suscribir');
-      for(let i = 0;i < 5; i++){
+      for (let i = 0; i < 5; i++) {
         setTimeout(() => {
-          observer.next('El mensaje '+i)
-        },1000+i)
+          observer.next('El mensaje ' + i)
+        }, 1000 + i)
       }
       setTimeout(() => {
         observer.complete();
-      },7000)
+      }, 7000)
       setTimeout(() => {
         observer.error('Ha ocurrido un error')
-      },7000)
+      }, 7000)
       setTimeout(() => {
         observer.next('Este mensaje no se muestra si hay error')
-      },8000)
+      }, 8000)
     });
-    miObservable.subscribe(
+    const subs: Subscription = miObservable.subscribe(
       (msg: string) => {
         console.log(msg);
       }, //next
@@ -43,6 +53,40 @@ export class CmpObservablesComponent implements OnInit {
         console.log('El observable se ha terminado');
       } //complete
     );
+
+    this.suscripciones.push(subs);
+  }
+
+  observableConOperadores() {
+    const miObservable = interval(1000)
+      .pipe(
+        filter(num => num % 2 === 0),
+        //take(5), //para decirle cuantos queremos
+        map(num => "Numero " + num)
+      )
+
+    const subs: Subscription = miObservable.subscribe((num) => {
+      console.log(num);
+    })
+
+    this.suscripciones.push(subs);
+  }
+
+  observableDeEventos() { //Para crear un observable apartir del html
+    const miObservable = fromEvent(document.getElementsByTagName('h2'),
+    "mouseenter");
+
+    miObservable.subscribe((event => {
+      console.log({event});
+    }))
+  }
+
+  cancelarSuscripciones() {
+    //this.suscripciones[0].unsubscribe();
+    //this.suscripciones[1].unsubscribe();
+    this.suscripciones.forEach((subs) => {
+      subs.unsubscribe();
+    });
   }
 
 }

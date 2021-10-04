@@ -28,6 +28,7 @@ import { CmpServiciosComponent } from './cmp-servicios/cmp-servicios.component';
 import { LukeComponent as SLukeComponent } from './cmp-servicios/luke/luke.component';
 import { LeiaComponent as SLeiaComponent } from './cmp-servicios/leia/leia.component';
 import { TareaComponent } from './cmp-servicios/tarea/tarea.component';
+import { CmpObservablesComponent } from './cmp-observables/cmp-observables.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { TareaComponent } from './cmp-servicios/tarea/tarea.component';
     CmpServiciosComponent,
     SLukeComponent,
     SLeiaComponent,
-    TareaComponent
+    TareaComponent,
+    CmpObservablesComponent
   ],
   imports: [
     BrowserModule,

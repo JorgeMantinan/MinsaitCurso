@@ -1,0 +1,18 @@
+<h2>Routing (@angular/router)</h2>
+
+<ul>
+    <li>
+        <!-- <a href="/">Inicio</a> -->
+        <a [routerLink]="['/']" >Inicio</a>
+    </li>
+    <li>
+        <!-- <a href="/nuevo-usuario">Nuevo usuario</a> -->
+        <a [routerLink]="['/nuevo-usuario']" >Nuevo usuario</a>
+        <!-- localhost:4200/nuevo-usuario/3/tareas -->
+        <a [routerLink]="['/nuevo-usuario', 3, 'tareas']" >Sin ruta</a>
+    </li>
+</ul>
+
+<hr>
+<!-- donde se mostraran las rutas anidadas-->
+<router-outlet></router-outlet> 

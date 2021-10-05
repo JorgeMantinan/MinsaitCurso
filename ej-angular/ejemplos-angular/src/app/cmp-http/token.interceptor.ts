@@ -6,6 +6,7 @@ import {
   HttpInterceptor
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {
@@ -17,6 +18,12 @@ export class TokenInterceptor implements HttpInterceptor {
     //Para crear una peticion diferente, al igual que clonamos objetos para crear otros nuevos.
     const nuevaRequest = request.clone({headers: request.headers.append('Authorization', '1234')})
     
-    return next.handle(nuevaRequest);
+    return next.handle(nuevaRequest)
+    // .pipe(
+    //   map(resp => {
+    //     console.log(resp);
+    //     return resp;
+    //   })
+    // );
   }
 }

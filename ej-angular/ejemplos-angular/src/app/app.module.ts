@@ -41,6 +41,7 @@ import { InfoUsuarioComponent } from './cmp-routing/info-usuario/info-usuario.co
 import { CmpModulosComponent } from './cmp-modulos/cmp-modulos.component';
 import { SharedModule } from './cmp-modulos/shared/shared.module';
 import { TokenInterceptor } from './cmp-http/token.interceptor';
+import { CacheInterceptor } from './cmp-http/cache.interceptor';
 
 @NgModule({
   declarations: [
@@ -88,7 +89,8 @@ import { TokenInterceptor } from './cmp-http/token.interceptor';
   ],
   providers: [
      //Con el multi true le decimos que puede haber varios interceptores asociados, y pasará por todos ellos
-      {provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }
+      {provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
+      {provide: HTTP_INTERCEPTORS, useClass: CacheInterceptor, multi: true }
     ],
   bootstrap: [AppComponent]
 })

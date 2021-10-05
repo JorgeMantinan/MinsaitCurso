@@ -1,0 +1,92 @@
+{
+  "vendehumos": [
+    {
+      "id": 1,
+      "nombre": "Paco Gonzalez",
+      "categorias":[
+        "NFT",
+        "Trading"
+      ],
+      "rrss": {
+        "facebook": "DiosDeDinero",
+        "twitter": "DiosDeDinero",
+        "youtube": "DiosDeDinero",
+        "instagram": "DiosDeDinero"
+      },
+      "descripcion": "El Dios de la bolsa te enseña a como limpiarte el culo con billetes a tus 20 años.",
+      "votos": 3,
+      "fechaCreacion": "01/10/2020",
+      "usuarioId": 2
+    },
+    {
+      "id": 2,
+      "nombre": "Hugo Balenciaga",
+      "categorias":[
+        "Dropshipping"
+      ],
+      "rrss": {
+        "facebook": "BalenciagaDeFamilia",
+        "twitter": "BalenciagaDeFamilia",
+        "youtube": "BalenciagaDeFamilia",
+        "instagram": "BalenciagaDeFamilia"
+      },
+      "descripcion": "Provengo de una familia muy adinerada que me ha enseñado todo de los negocios de moda. Si quieres pasar de tus bambas de Primark a tus zapatos Gucci dame tu dinero.",
+      "votos": 104,
+      "fechaCreacion": "21/01/2021",
+      "usuarioId": 1
+    },
+    {
+      "id": 3,
+      "nombre": "Melissa Elca Bello",
+      "categorias":[
+        "Apuestas"
+      ],
+      "rrss": {
+        "facebook": "ApuestasGanadoras",
+        "twitter": "ApuestasGanadoras",
+        "youtube": "ApuestasGanadoras",
+        "instagram": "ApuestasGanadoras"
+      },
+      "descripcion": "Apuesta tu jubilación y no te arrepientas.",
+      "votos": 54,
+      "fechaCreacion": "07/07/2019",
+      "usuarioId": 1
+    },
+    {
+      "id": 4,
+      "nombre": "Ivan Astafarte",
+      "categorias":[
+        "NFT",
+        "Trading",
+        "Dropshipping",
+        "Apuestas"
+      ],
+      "rrss": {
+        "facebook": "IvanAstafarte",
+        "twitter": "IvanAstafarte",
+        "youtube": "IvanAstafarte",
+        "instagram": "IvanAstafarte"
+      },
+      "descripcion": "Estafa a domicilio. No dejes a tu abuelita sola.",
+      "votos": 1204,
+      "fechaCreacion": "13/09/2018",
+      "usuarioId": 2
+    }
+  ],
+  "usuarios": [
+    {
+      "id": 1,
+      "nombre": "BuscaHumos DeAlquiler",
+      "foto": "",
+      "contraseña": "MiPerro24",
+      "email": ""
+    },
+    {
+      "id": 2,
+      "nombre": "Manolo Cotillas",
+      "foto": "",
+      "contraseña": "MiContraseñaOriginal",
+      "email": ""
+    }
+  ]
+}

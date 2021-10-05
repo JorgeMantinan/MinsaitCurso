@@ -13,33 +13,33 @@ export class TareasService {
 
   getTareas() {
     return this.http.get<Tarea>(`${environment.BASE_URL_API}/tareas`, {
-      headers: {
-        'Authorization': '1234'
-      }
+      // headers: {
+      //   'Authorization': '1234'
+      // }
     });
   }
 
   guardarTarea(tarea: any) {
     return this.http.post<Tarea>(`${environment.BASE_URL_API}/tareas`, tarea,{
-      headers: {
-        'Authorization': '1234'
-      }
+      // headers: {
+      //   'Authorization': '1234'
+      // }
     });
   }
 
   completarTarea(tareaId: number, completada: boolean) {
     return this.http.patch<Tarea>(`${environment.BASE_URL_API}/tareas/${tareaId}`, {completada},{
-      headers: {
-        'Authorization': '1234'
-      }
+      // headers: {
+      //   'Authorization': '1234'
+      // }
     });
   }
 
   eliminarTarea(tareaId: number) {
     return this.http.delete<Tarea>(`${environment.BASE_URL_API}/tareas/${tareaId}`, {
-      headers: {
-        'Authorization': '1234'
-      },
+      // headers: {
+      //   'Authorization': '1234'
+      // },
       observe: 'response'
     });
   }

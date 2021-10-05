@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http'; 
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'; 
 
 import { AppComponent } from './app.component';
 import { ComponenteAManoComponent } from './componente-a-mano/componente-a-mano.component';
@@ -40,6 +40,7 @@ import { RoutingModule } from './cmp-routing/app.routes';
 import { InfoUsuarioComponent } from './cmp-routing/info-usuario/info-usuario.component';
 import { CmpModulosComponent } from './cmp-modulos/cmp-modulos.component';
 import { SharedModule } from './cmp-modulos/shared/shared.module';
+import { TokenInterceptor } from './cmp-http/token.interceptor';
 
 @NgModule({
   declarations: [
@@ -85,7 +86,10 @@ import { SharedModule } from './cmp-modulos/shared/shared.module';
     RoutingModule,
     SharedModule
   ],
-  providers: [],
+  providers: [
+     //Con el multi true le decimos que puede haber varios interceptores asociados, y pasará por todos ellos
+      {provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

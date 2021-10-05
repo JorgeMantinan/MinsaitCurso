@@ -1,12 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ComponentCanDeactivate } from './nuevo-usuario.guard';
 
 @Component({
   selector: 'app-nuevo-usuario',
   templateUrl: './nuevo-usuario.component.html',
   styleUrls: ['./nuevo-usuario.component.css']
 })
-export class NuevoUsuarioComponent implements OnInit {
+export class NuevoUsuarioComponent implements OnInit, ComponentCanDeactivate {
+
+  datosGuardados = false;
 
   constructor(private router: Router) { }
 
@@ -16,9 +19,14 @@ export class NuevoUsuarioComponent implements OnInit {
   crearUsuario() {
     console.log('Guardando datos');
     setTimeout(() => {
-            //Redireccion
-      this.router.navigate(['/']);
+      //       //Redireccion
+      // this.router.navigate(['/']);
+      this.datosGuardados = true
     }, 1000)
+  }
+
+  puedoSalir() {
+    return this.datosGuardados || confirm('Perderás los cambios');
   }
 
 }

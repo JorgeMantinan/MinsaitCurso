@@ -38,6 +38,8 @@ import { NuevoUsuarioComponent } from './cmp-routing/nuevo-usuario/nuevo-usuario
 import { ListaUsuariosComponent } from './cmp-routing/lista-usuarios/lista-usuarios.component';
 import { RoutingModule } from './cmp-routing/app.routes';
 import { InfoUsuarioComponent } from './cmp-routing/info-usuario/info-usuario.component';
+import { CmpModulosComponent } from './cmp-modulos/cmp-modulos.component';
+import { SharedModule } from './cmp-modulos/shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -73,13 +75,15 @@ import { InfoUsuarioComponent } from './cmp-routing/info-usuario/info-usuario.co
     Error404Component,
     NuevoUsuarioComponent,
     ListaUsuariosComponent,
-    InfoUsuarioComponent
+    InfoUsuarioComponent,
+    CmpModulosComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    RoutingModule
+    RoutingModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

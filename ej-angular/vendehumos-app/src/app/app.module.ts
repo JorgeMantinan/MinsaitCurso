@@ -4,6 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { ListadoVendehumosComponent } from './listado-vendehumos/listado-vendehumos.component';
 import { CardVendehumosComponent } from './card-vendehumos/card-vendehumos.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -12,7 +14,9 @@ import { CardVendehumosComponent } from './card-vendehumos/card-vendehumos.compo
     CardVendehumosComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

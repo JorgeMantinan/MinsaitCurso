@@ -1,1 +1,21 @@
-<p>listado-vendehumos works!</p>
+<div>Listar por: 
+    <button type="button" (click)="sortVotes()">Votos</button>
+    <button type="button" (click)="sortDate()">Fecha</button>
+</div>
+
+<div>
+    <ul>
+        <li *ngFor="let vendehumo of vendehumos">
+            <div>{{vendehumo.nombre}} | {{vendehumo.categorias}}</div>
+            <!-- <button type="button" (click)="sumarVoto(vendehumos.id)">Votos: {{vendehumo.votos}}</button> Pasarle ID -->
+            <div>Fecha: {{vendehumo.fechaCreacion}}</div>
+
+            <div *ngFor="let usuario of usuarios">
+                <p *ngIf="usuario.id === vendehumo.usuarioId">Usuario: {{usuario.nombre}}</p>
+            </div>
+            <!-- <a [routerLink]="['/usuarios', usuario.id]" [routerLinkActive]="['active']">Ver + info</a> -->
+            <hr>
+        </li>
+    </ul>
+</div>
+

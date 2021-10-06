@@ -7,7 +7,7 @@ import { ComponenteAManoComponent } from './componente-a-mano/componente-a-mano.
 import { ComponenteAComponent } from './componente-a/componente-a.component';
 import { ComponenteBComponent } from './componente-b/componente-b.component';
 import { CmpDataBindingComponent } from './cmp-data-binding/cmp-data-binding.component'
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EventosComponent } from './cmp-data-binding/eventos/eventos.component';
 import { CmpComunicacionEntreComponentesComponent } from './cmp-comunicacion-entre-componentes/cmp-comunicacion-entre-componentes.component';
 import { SugusComponent } from './cmp-comunicacion-entre-componentes/sugus/sugus.component';
@@ -36,12 +36,15 @@ import { CmpRoutingComponent } from './cmp-routing/cmp-routing.component';
 import { Error404Component } from './cmp-routing/error404/error404.component';
 import { NuevoUsuarioComponent } from './cmp-routing/nuevo-usuario/nuevo-usuario.component';
 import { ListaUsuariosComponent } from './cmp-routing/lista-usuarios/lista-usuarios.component';
-import { RoutingModule } from './cmp-routing/app.routes';
 import { InfoUsuarioComponent } from './cmp-routing/info-usuario/info-usuario.component';
 import { CmpModulosComponent } from './cmp-modulos/cmp-modulos.component';
 import { SharedModule } from './cmp-modulos/shared/shared.module';
 import { TokenInterceptor } from './cmp-http/token.interceptor';
 import { CacheInterceptor } from './cmp-http/cache.interceptor';
+import { CmpFormulariosComponent } from './cmp-formularios/cmp-formularios.component';
+import { ErrorComponent } from './cmp-formularios/error/error.component';
+import { FormReactivoComponent } from './cmp-formularios/form-reactivo/form-reactivo.component';
+import { RoutingModule } from './cmp-routing/app.routes';
 
 @NgModule({
   declarations: [
@@ -78,11 +81,15 @@ import { CacheInterceptor } from './cmp-http/cache.interceptor';
     NuevoUsuarioComponent,
     ListaUsuariosComponent,
     InfoUsuarioComponent,
-    CmpModulosComponent
+    CmpModulosComponent,
+    CmpFormulariosComponent,
+    ErrorComponent,
+    FormReactivoComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     RoutingModule,
     SharedModule

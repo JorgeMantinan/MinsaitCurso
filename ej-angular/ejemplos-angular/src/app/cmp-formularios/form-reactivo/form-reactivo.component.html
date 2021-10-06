@@ -1,0 +1,22 @@
+<h3>Formulario Reactivo</h3>
+
+<!-- Para que se comunique con el formulario del ts -->
+<form [formGroup]="formulario" (ngSubmit)="login()">
+    <div>
+        <label for="username">Usuario</label>
+        <!-- formControlName = la variable del FormGroup del ts -->
+        <input type="text" id="username" formControlName="username">
+        <app-error
+        *ngIf="formulario.controls.username.invalid && formulario.controls.username.touched"
+         [errores]="formulario.controls.username.errors"></app-error>
+    </div>
+    <div>
+        <label for="password">Contraseña</label>
+        <input type="password" id="password" formControlName="password">
+        <app-error
+        *ngIf="formulario.controls.password.invalid && formulario.controls.password.touched"
+         [errores]="formulario.controls.password.errors"></app-error>
+    </div>
+    <button type="submit" [disabled]="formulario.invalid">Login</button>
+    <button type="submit">Login</button>
+</form>

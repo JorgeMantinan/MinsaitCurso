@@ -7,6 +7,8 @@ import { CardVendehumosComponent } from './card-vendehumos/card-vendehumos.compo
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
+//import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule//,
+    //NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,18 +1,24 @@
 <div>Listar por: 
-    <button type="button" (click)="sortVotes()">Votos</button>
-    <button type="button" (click)="sortDate()">Fecha</button>
+    <!-- Ordenar por votos y fecha -->
+    <!-- <button type="button" (click)="ordenation('votos')">Ordenar Votos</button> -->
+    <button type="button">Fecha</button>
 </div>
 
 <div>
     <ul>
-        <li *ngFor="let vendehumo of vendehumos">
-            <div>{{vendehumo.nombre}} | {{vendehumo.categorias}}</div>
-            <!-- <button type="button" (click)="sumarVoto(vendehumos.id)">Votos: {{vendehumo.votos}}</button> Pasarle ID -->
+        <li *ngFor="let vendehumo of vendehumos"> <!-- sort:['votos', 'desc'] -->
+            <div>{{vendehumo.nombre}}</div><div> | {{vendehumo.categorias}}</div>
+
+            
+            <div>Votos: {{vendehumo.votos}}</div>
+
             <div>Fecha: {{vendehumo.fechaCreacion}}</div>
 
             <div *ngFor="let usuario of usuarios">
                 <p *ngIf="usuario.id === vendehumo.usuarioId">Usuario: {{usuario.nombre}}</p>
             </div>
+
+            
             <!-- <a [routerLink]="['/usuarios', usuario.id]" [routerLinkActive]="['active']">Ver + info</a> -->
             <hr>
         </li>

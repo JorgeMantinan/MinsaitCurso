@@ -12,6 +12,9 @@ export class ListadoVendehumosComponent implements OnInit {
   vendehumos: any = [];
   usuarios: any = [];
 
+  keySort: string = 'id';
+  reverse: boolean = false;
+
   constructor(private vendehumosService: VendehumosServiceService) { }
 
   ngOnInit(): void {
@@ -23,12 +26,5 @@ export class ListadoVendehumosComponent implements OnInit {
     });
   }
 
-  sortVotes() {
-    
-  }
-
-  sortDate() {
-
-  }
 
 }

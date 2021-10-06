@@ -34,11 +34,33 @@ export class CmpHttpComponent implements OnInit {
     });
   }
 
- borrarTarea() {
+  borrarTarea() {
     this.tareasService.eliminarTarea(7).subscribe((resp) => {
       console.log(resp);
       console.log('Se ha eliminado correctamente');
     })
+  }
+
+  getTarea() {
+    this.tareasService.getTareasConCategorias(1).
+      subscribe((tarea: any) => {
+        console.log(tarea);
+      })
+  }
+
+  getTareas() {
+    this.tareasService.getTareasConCategorias1().
+      subscribe((tarea: any) => {
+        console.log(tarea);
+      })
+  }
+
+  
+  getTareasCat1() {
+    this.tareasService.getTareasPorCategorias(1)
+      .subscribe((tareas: any) => {
+        console.log(tareas);
+      })
   }
 
 }

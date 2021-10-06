@@ -89,8 +89,8 @@ import { CacheInterceptor } from './cmp-http/cache.interceptor';
   ],
   providers: [
      //Con el multi true le decimos que puede haber varios interceptores asociados, y pasará por todos ellos
-      {provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
-      {provide: HTTP_INTERCEPTORS, useClass: CacheInterceptor, multi: true }
+      {provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }//,
+      // {provide: HTTP_INTERCEPTORS, useClass: CacheInterceptor, multi: true }
     ],
   bootstrap: [AppComponent]
 })

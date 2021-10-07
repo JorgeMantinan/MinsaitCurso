@@ -6,6 +6,7 @@ import { ListadoVendehumosComponent } from './listado-vendehumos/listado-vendehu
 import { CardVendehumosComponent } from './card-vendehumos/card-vendehumos.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { SortPipe } from './sort.pipe';
 
 //import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
@@ -13,7 +14,8 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     AppComponent,
     ListadoVendehumosComponent,
-    CardVendehumosComponent
+    CardVendehumosComponent,
+    SortPipe
   ],
   imports: [
     BrowserModule,

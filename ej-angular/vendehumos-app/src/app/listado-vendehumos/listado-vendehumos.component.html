@@ -1,12 +1,14 @@
 <div>Listar por: 
     <!-- Ordenar por votos y fecha -->
-    <!-- <button type="button" (click)="ordenation('votos')">Ordenar Votos</button> -->
-    <button type="button">Fecha</button>
+    <!-- <button type="button" (click)="getSortValue = 'votos'">Ordenar Votos</button> -->
+    
+    <!-- <button type="button" (click)="getSortValue = 'votos'" [(ngModel)]="ordenarVotos">Votos</button> Un imput con (click)="listar($event)" se podría mejor
+    <button type="button" (click)="ordenation()" [(ngModel)]="ordenarFecha">Fecha</button> -->
 </div>
 
 <div>
     <ul>
-        <li *ngFor="let vendehumo of vendehumos"> <!-- sort:['votos', 'desc'] -->
+        <li *ngFor="let vendehumo of vendehumos | sort:getSortValue"> <!-- sort:['votos', 'desc'] -->
             <div>{{vendehumo.nombre}}</div><div> | {{vendehumo.categorias}}</div>
 
             

@@ -45,6 +45,7 @@ import { CmpFormulariosComponent } from './cmp-formularios/cmp-formularios.compo
 import { ErrorComponent } from './cmp-formularios/error/error.component';
 import { FormReactivoComponent } from './cmp-formularios/form-reactivo/form-reactivo.component';
 import { RoutingModule } from './cmp-routing/app.routes';
+import { FormNormalComponent } from './cmp-formularios/form-normal/form-normal.component';
 
 @NgModule({
   declarations: [
@@ -84,7 +85,8 @@ import { RoutingModule } from './cmp-routing/app.routes';
     CmpModulosComponent,
     CmpFormulariosComponent,
     ErrorComponent,
-    FormReactivoComponent
+    FormReactivoComponent,
+    FormNormalComponent
   ],
   imports: [
     BrowserModule,

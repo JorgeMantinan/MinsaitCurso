@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
+import { AuthService } from '../auth.service';
+import jwtDecode from 'jwt-decode';
 
 @Component({
   selector: 'app-form-reactivo',
@@ -9,8 +11,9 @@ import { FormGroup, FormControl, Validators, AbstractControl, ValidationErrors }
 export class FormReactivoComponent implements OnInit {
 
   formulario: FormGroup;
+  datosPayload: any = null;
 
-  constructor() { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
     this.formulario = new FormGroup({
@@ -26,6 +29,17 @@ export class FormReactivoComponent implements OnInit {
 
   login() {
     console.log(this.formulario);
+    const {username, password} = this.formulario.value;
+    this.authService.login(username, password)
+      .subscribe((datos: any) => {
+        console.log(datos.token);
+        localStorage.setItem('jwtToken', datos.token);
+        //sessionStorage.setItem('jwtToken', datos.token);
+
+        const payload = jwtDecode(datos.token);
+        this.datosPayload = payload;
+        console.log(payload);
+      })
   }
 
   //this.esStark(['tony', 'rickon', 'arya', 'sansa', 'robb'])
@@ -65,6 +79,17 @@ export class FormReactivoComponent implements OnInit {
         }
       }
     }
+  }
+
+  logout() {
+    this.authService.logout();
+  }
+
+  getDatos() {
+    this.authService.getDatos()
+      .subscribe((datos) => {
+        console.log(datos)
+      })
   }
 
 }

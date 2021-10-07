@@ -12,8 +12,7 @@ export class ListadoVendehumosComponent implements OnInit {
   vendehumos: any = [];
   usuarios: any = [];
 
-  keySort: string = 'id';
-  reverse: boolean = false;
+  sortValue: string = '';
 
   constructor(private vendehumosService: VendehumosServiceService) { }
 
@@ -24,6 +23,10 @@ export class ListadoVendehumosComponent implements OnInit {
     this.vendehumosService.getUsuarios().subscribe((usuarios: any) => {
       this.usuarios = usuarios;
     });
+  }
+
+  getSortValue(btnData: any) {
+    this.sortValue = btnData.name;
   }
 
 

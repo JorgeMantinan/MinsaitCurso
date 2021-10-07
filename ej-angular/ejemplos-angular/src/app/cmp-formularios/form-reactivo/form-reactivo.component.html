@@ -21,8 +21,8 @@
     <button type="submit">Login</button>
 </form>
 
-<button type="button" (click)="logout()">Logout</button>
-<button type="button" (click)="getDatos()">Get Datos</button>
+<button type="button" class="btn btn-success" (click)="logout()">Logout</button>
+<button type="button" class="btn btn-danger" (click)="getDatos()">Get Datos</button>
 
 <p>Datos que vienen del token</p>
 <pre>{{datosPayload | json}}</pre>

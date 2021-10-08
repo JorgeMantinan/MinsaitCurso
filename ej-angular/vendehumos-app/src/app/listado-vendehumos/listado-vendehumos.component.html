@@ -1,16 +1,13 @@
 <div>Listar por: 
-    <!-- Ordenar por votos y fecha -->
-    <!-- <button type="button" (click)="[(sortValue)] = 'votos'">Ordenar Votos</button> -->
-    
     <button type="button" name="btnSortVotos" (click)="getSortValue(btnSortVotos)" #btnSortVotos>Votos</button>
     <button type="button" name="btnSortFecha" (click)="getSortValue(btnSortFecha)" #btnSortFecha>Fecha</button>
-    <!-- <button type="button" (click)="ordenation()" [(ngModel)]="ordenarFecha">Fecha</button> -->
 </div>
 
 <div>
     <ul>
-        <li *ngFor="let vendehumo of vendehumos | sort:sortValue"> <!-- sort:['votos', 'desc'] -->
-            <div>{{vendehumo.nombre}}</div><div> | {{vendehumo.categorias}}</div>
+        <li *ngFor="let vendehumo of vendehumos | sort:sortValue">
+            <div>{{vendehumo.nombre}}</div>
+            <div> | {{vendehumo.categorias}}</div>
 
             
             <div>Votos: {{vendehumo.votos}}</div>
@@ -21,10 +18,7 @@
                 <p *ngIf="usuario.id === vendehumo.usuarioId">Usuario: {{usuario.nombre}}</p>
             </div>
 
-            
-            <!-- <a [routerLink]="['/usuarios', usuario.id]" [routerLinkActive]="['active']">Ver + info</a> -->
             <hr>
         </li>
     </ul>
 </div>
-

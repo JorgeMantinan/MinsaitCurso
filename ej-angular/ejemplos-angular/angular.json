@@ -44,12 +44,12 @@
             "es": {
               "localize": [
                 "es"
-              ],
+              ]
             },
             "fr": {
               "localize": [
                 "fr"
-              ],
+              ]
             },
             "production": {
               "budgets": [
